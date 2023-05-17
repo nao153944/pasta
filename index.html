@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+    
+    
+<head>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P27B3SF7PC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P27B3SF7PC');
+</script>    
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>pasta</title>
+  <link rel="shortcut icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"> 
+</head>
+
+    
+<body>
+    
+    <div class="snslink">
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-twitter"></i>
+           <a href="https://twitter.com/pa__hasta" target="_blank"><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-youtube"></i>
+           <a href="https://www.youtube.com/@HieiPa__Hasta/featured" target="_blank"><i class="fab fa-youtube fa-stack-1x"></i></a>
+        </span> 
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/kaguya/"><img src="kaguya.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/mila/"><img src="mila.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/fubu/"><img src="fubu.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/yomi/"><img src="yomi.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-trash"></i>
+           <i class="far fa-trash-alt fa-stack-1x fa-inverse" onclick="ConfirmAlert()"></i>
+        </span> 
+        
+        <span class="fa-stack fa-2x fa-lg" onclick="scrolltop()">
+           <i class="fa fa-circle fa-stack-2x circle-up"></i>
+           <i class="fas fas fa-chevron-up fa-stack-1x fa-inverse"></i>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg" onclick="scrollunder()">
+           <i class="fa fa-circle fa-stack-2x circle-up"></i>
+           <i class="fas fas fa-chevron-down fa-stack-1x fa-inverse"></i>
+        </span>
+        
+    </div>
+    
+    
+    <div class ="favorite">
+       <input type="checkbox" class="favorite-checkbox" id="favorite" onclick="FavoriteCheck()" >
+       <label class="c-text-favorite" for="favorite-checkbox">お気に入り</label>
+    </div>
+    
+    
+    <div class="form">
+      <input type="search" inputmode="search" class="select4" id="select4" placeholder="曲名を入力" onchange="SelectCheck()">
+    </div>
+    
+    
+    <div class ="select">
+       <label class="c-text-select">歌手名</label>
+       <select id="select3" class="select3" onchange="SelectCheck()">
+          <option value="none">選択なし</option>
+                  <option value="ULTRA-PRISM with イカ娘(金元寿子)">ULTRA-PRISM with イカ娘(金元寿子)</option>
+                  <option value="M・S・J">M・S・J</option>
+                  <option value="坂本真綾">坂本真綾</option>
+                  <option value="the peggies">the peggies</option>
+                  <option value="J×Takanori Nishikawa">J×Takanori Nishikawa</option>
+                  <option value="涼宮ハルヒ(平野綾)">涼宮ハルヒ(平野綾)</option>
+                  <option value="ずっと真夜中でいいのに。">ずっと真夜中でいいのに。</option>
+                  <option value="千石撫子(花澤香菜)">千石撫子(花澤香菜)</option>
+                  <option value="戦慄かなの">戦慄かなの</option>
+                <optgroup label=""></optgroup>
+       </select>
+  
+
+       <label class="c-text-select">配信日</label>
+       <select id="select1" class="select1" onchange="SelectCheck()">
+          <option value="none">選択なし</option>
+                  <option value="2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】">2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</option>
+                  <option value="2023/05/09【初配信/クトゥルフ神話】飛影ハスタを祝え‼️崇めよ‼️だよ🍝🦖‼️【新人VTuber/エアプロ】">2023/05/09【初配信/クトゥルフ神話】飛影ハスタを祝え‼️崇めよ‼️だよ🍝🦖‼️【新人VTuber/エアプロ】</option>
+                <optgroup label=""></optgroup>
+       </select>
+    </div>
+
+    <div class ="radio">
+       <input class="r-button" type="radio" name="q1" value="デフォルト" onclick="RadioCheck()" checked>
+          <label class="r-text">デフォルト</label>
+       <input class="r-button" type="radio" name="q1" value="配信順" onclick="RadioCheck()">
+          <label class="r-text">配信順</label>
+       <input class="r-button" type="radio" name="q1" value="歌唱回数順" onclick="RadioCheck()">
+          <label class="r-text">歌唱回数順</label>
+    </div>
+
+
+<div class ="content" id="content">
+
+              <div id="c-1-1" class="1">
+           <input type="checkbox" class="checkbox" id="1-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-1-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=fMmbYVmH15M\x26t=2347s')">
+              <c-text-title id="al-c-1-1" class="坂本真綾">色彩</c-text-title><br>
+              <c-text-youtube>2023/05/09【初配信/クトゥルフ神話】飛影ハスタを祝え‼️崇めよ‼️だよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-2-1" class="2">
+           <input type="checkbox" class="checkbox" id="2-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-2-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=134s')">
+              <c-text-title id="al-c-2-1" class="J×Takanori Nishikawa">REAL×EYEZ</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-3-1" class="3">
+           <input type="checkbox" class="checkbox" id="3-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-3-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=486s')">
+              <c-text-title id="al-c-3-1" class="千石撫子(花澤香菜)">恋愛サーキュレーション</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-4-1" class="4">
+           <input type="checkbox" class="checkbox" id="4-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-4-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=966s')">
+              <c-text-title id="al-c-4-1" class="戦慄かなの">moreきゅん奴隷</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-5-1" class="5">
+           <input type="checkbox" class="checkbox" id="5-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-5-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=1403s')">
+              <c-text-title id="al-c-5-1" class="ULTRA-PRISM with イカ娘(金元寿子)">侵略ノススメ☆</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-6-1" class="6">
+           <input type="checkbox" class="checkbox" id="6-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-6-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=1651s')">
+              <c-text-title id="al-c-6-1" class="the peggies">君のせい</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-7-1" class="7">
+           <input type="checkbox" class="checkbox" id="7-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-7-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=2220s')">
+              <c-text-title id="al-c-7-1" class="M・S・J">ハッピー・ジャムジャム</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-8-1" class="8">
+           <input type="checkbox" class="checkbox" id="8-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-8-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=2446s')">
+              <c-text-title id="al-c-8-1" class="涼宮ハルヒ(平野綾)">God knows...</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-9-1" class="9">
+           <input type="checkbox" class="checkbox" id="9-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'hastac-9-1'); OpenWindow('https:\/\/www.youtube.com\/watch?v=Ya6gwn4nowk\x26t=3033s')">
+              <c-text-title id="al-c-9-1" class="ずっと真夜中でいいのに。">秒針を噛む</c-text-title><br>
+              <c-text-youtube>2023/05/15【歌枠 / Singing Stream】歌う邪神なんだよ🍝🦖‼️【新人VTuber/エアプロ】</c-text-youtube>
+           </button>
+        </div>
+
+      
+
+    </div>
+
+   <script type="text/javascript">
+       
+       
+var list = new Array(
+"1-1",
+"2-1",
+"3-1",
+"4-1",
+"5-1",
+"6-1",
+"7-1",
+"8-1",
+"9-1",
+);
+
+
+
+
+
+var rh = new Array(
+"1-1",
+"2-1",
+"3-1",
+"4-1",
+"5-1",
+"6-1",
+"7-1",
+"8-1",
+"9-1",
+);
+       
+       
+      var loadcontent;
+      var loadcheckbox;
+      var loadlist;
+       
+      window.onload = firstscript();
+      
+       
+       
+      function firstscript(){
+         var i=0;
+         while( i<list.length ){
+            loadlist = JSON.parse(localStorage.getItem('pastasave'+list[i]));
+            if(loadlist == "true"){
+               loadcheckbox = document.getElementById(list[i]);
+               loadcheckbox.checked = true;
+            }
+            i++;
+         }
+          
+         loadlist = JSON.parse(localStorage.getItem('pastasavefavorite'));
+         if(loadlist == "true"){
+            loadcheckbox = document.getElementById('favorite');
+            loadcheckbox.checked = true;
+            FavoriteOn();
+         }
+          
+         loadlist = JSON.parse(localStorage.getItem('pastasaveradio')); 
+         if(loadlist == "1"){
+            loadcheckbox = document.getElementsByName('q1');
+            loadcheckbox[1].checked = true;
+         } 
+         else if(loadlist == "2"){
+            loadcheckbox = document.getElementsByName('q1');
+            loadcheckbox[2].checked = true;
+         } 
+         RadioCheck();
+      }
+       
+       
+       
+      function Save() {
+          var i = 0;
+          while( i<list.length ){
+             loadcheckbox = document.getElementById(list[i]);
+             if(loadcheckbox.checked == true){
+                  localStorage.setItem('pastasave'+list[i],JSON.stringify("true"));
+             }
+             else{
+                 loadlist = JSON.parse(localStorage.getItem('pastasave'+list[i]));
+                 if(loadlist == "true"){
+                    localStorage.removeItem('pastasave'+list[i]);
+                 }
+             }
+             i++;
+          }
+      }
+      
+      
+      function ConfirmAlert(){
+          var message = "保存データを削除しますか？";
+          if(confirm(message)){
+             Delete();
+          }
+      } 
+       
+      function Delete(){
+          var i = 0;
+          while( i<list.length ){
+             localStorage.removeItem('pastasave'+list[i]);
+             loadcheckbox = document.getElementById(list[i]);
+             if(loadcheckbox.checked == true){
+                  loadcheckbox.checked = false;
+             }
+             i++;
+          }
+          localStorage.removeItem('pastasavefavorite');
+          localStorage.removeItem('pastasaveradio');
+      } 
+       
+       
+      function FavoriteCheck() {
+         loadcheckbox = document.getElementById("favorite");
+         if(loadcheckbox.checked == true){
+            FavoriteOn(); 
+         }
+         else{
+            FavoriteOff();
+         }
+         SelectCheck();
+      } 
+    
+       
+      function FavoriteOn() {
+          var i = 0;
+          while( i<list.length ){
+             loadlist = JSON.parse(localStorage.getItem('pastasave'+list[i]));
+             if(loadlist == "true"){
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.remove("c-active-none");
+             }
+             else{
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.add("c-active-none");
+             }
+             i++;
+          }
+          localStorage.setItem('pastasavefavorite',JSON.stringify("true"));
+      }
+       
+      function FavoriteOff() {
+          var i = 0;
+          while( i<list.length ){
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.remove("c-active-none");
+             i++;
+          }
+          localStorage.removeItem('pastasavefavorite');
+      }
+        
+      
+      function SelectCheck() {
+         var select1check = document.getElementById("select1");
+         var select2check = document.getElementById("select4");
+         var select3check = document.getElementById("select3");
+         var i = 0;
+         while( i<list.length ){
+            loadcontent = document.getElementById("c-"+list[i]);
+            loadcontent.classList.remove("c-select-none");
+            loadcontent.classList.remove("c-select2-none");
+            loadcontent.classList.remove("c-select3-none");
+            i++;
+         }  
+         if(select1check.value != "none"){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("c-"+list[i]);
+               if(loadcontent.textContent.indexOf(select1check.value) == -1 ){
+                  loadcontent.classList.add("c-select-none");
+               }
+               i++;
+            }
+         }
+         if(select2check.value != "" || select2check.value != null){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("al-c-"+list[i]);
+               if(loadcontent.textContent.indexOf(select2check.value) == -1){
+                  loadcontent = document.getElementById("c-"+list[i]);
+                  loadcontent.classList.add("c-select2-none");       
+               }
+               i++
+            }
+         }
+         if(select3check.value != "none"){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("al-c-"+list[i]);
+               if(loadcontent.classList != select3check.value){
+                   loadcontent = document.getElementById("c-"+list[i]);
+                   loadcontent.classList.add("c-select3-none");
+               }
+               i++;
+            }
+         }
+         RadioCheck();
+      } 
+       
+       
+      
+      function RadioCheck(){
+         RemoveIB();
+         var radiocheck = document.getElementsByName('q1'); 
+         var i = 0;
+         while(i<radiocheck.length){
+            if(radiocheck[i].checked == true){
+               radiocheck = radiocheck[i].value;
+            }
+            i++;
+         }
+         var element = document.getElementById("content");
+
+         if(radiocheck == "デフォルト"){
+             var i=0;
+             while(i<list.length){
+                var elementload = document.getElementById("c-"+ list[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+             localStorage.removeItem('pastasaveradio');
+             
+         } 
+         else if(radiocheck == "配信順"){
+             var i=0;
+             while(i<rh.length){
+                var elementload = document.getElementById("c-"+ rh[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+             localStorage.setItem('pastasaveradio',JSON.stringify('1'));
+         }
+         else if(radiocheck == "歌唱回数順"){
+             SCCheck();
+             localStorage.setItem('pastasaveradio',JSON.stringify('2'));
+         }
+      }  
+      
+       
+       
+      function SCCheck(){
+            var scchecklist = new Array();
+            var num,cnt,count=1,sp1,sp2;
+            var sclist = new Array({num,cnt});
+            var splitlist = new Array({sp1,sp2});
+            var i = 0 , l = 0; 
+            while( i<list.length ){
+               loadcontent = document.getElementById("c-"+list[i]);
+               if(loadcontent.classList.contains("c-select-none") || loadcontent.classList.contains("c-select2-none") || 
+                  loadcontent.classList.contains("c-select3-none") || loadcontent.classList.contains("c-select4-none") || 
+                  loadcontent.classList.contains("c-active-none")
+               ){
+                  //console.log("none");
+               }
+               else{
+                  scchecklist[l] = list[i];
+                  var splitlist2 = loadcontent.id.split("-");
+                  splitlist[l] = {sp1:splitlist2[1],sp2:splitlist2[2]}
+                  l++;
+               }
+               i++;
+            }
+          
+            var i = 0 , l = 1 , f = 0;
+            while( l<splitlist.length ){
+                if(splitlist[i].sp1 == splitlist[l].sp1){
+                   count++;
+                }
+                else{
+                   sclist[f] = {num:splitlist[i].sp1 , cnt:count}
+                   f++;
+                   count = 1;
+                }
+                i++;
+                l++;
+            }
+            sclist[f] = {num:splitlist[i].sp1 , cnt:count}
+            sclist.sort((a, b) => b.cnt - a.cnt);
+          
+            var sc = new Array();
+            var l=0 , f=0;
+            while( l<sclist.length ){
+                i = 0;
+                while( i<scchecklist.length ){
+                    loadcontent = document.getElementById("c-"+scchecklist[i]);
+                    if(loadcontent.classList.contains(sclist[l].num)){
+                        sc[f] = scchecklist[i];
+                        f++;
+                    }
+                    i++;
+                }
+                l++;
+            }
+          
+          
+             var i=0;
+             var element = document.getElementById("content");
+             while(i<sc.length){
+                var elementload = document.getElementById("c-"+ sc[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+          
+          RemoveIB();
+          var eleFirst;
+          var i=0;
+          while(i<list.length){
+              eleFirst = document.getElementById("c-"+list[i]).classList.remove("NoClass");
+              i++;
+          }
+          
+          var iblist = new Array({num,cnt});
+          var i=0 , l=1 , f=0;
+          iblist[f] = {num:sclist[i].num , cnt:sclist[i].cnt}
+          f++;
+          while(l<sclist.length){
+              if(sclist[i].cnt > sclist[l].cnt){
+                 iblist[f] = {num:sclist[l].num , cnt:sclist[l].cnt}
+                 f++; 
+              }
+              i++;
+              l++;
+          }
+
+          
+          i=0;
+          while(i<scchecklist.length){
+              eleFirst = document.getElementById("c-"+scchecklist[i]).classList.add("NoClass");
+              i++;
+          }
+          
+          
+          f=0;
+          while(f<iblist.length){
+             var newElement = document.createElement("div");
+             newElement.classList.add("kaisuu");
+             var newElement2 = document.createElement("kaisuu-text");
+             newElement.appendChild(newElement2);
+             var newContent = document.createTextNode(iblist[f].cnt+"回"); 
+             newElement2.appendChild(newContent);
+
+              var i=0;
+              while(i<list.length){
+                  loadcontent = document.getElementById("c-"+list[i]);
+                  if(loadcontent.classList.contains("NoClass") && loadcontent.classList.contains(iblist[f].num) ){
+                     var ele = loadcontent;
+                     break;
+                  }
+                  else{
+                     i++;  
+                  }
+              }
+             
+             var parentElement = document.getElementsByClassName("content")[0];
+             parentElement.insertBefore(newElement, ele);
+             f++;
+          }
+        }
+     
+          
+      
+       
+      function RemoveIB(){
+             var removecontent = document.getElementsByClassName("kaisuu");
+             if (0 < removecontent.length) {
+                while (removecontent.length) {
+                   removecontent.item(0).remove()
+                }
+             }
+      };  
+       
+       
+       
+       
+       
+      function scrolltop(){
+         window.scroll({top: 0, behavior: 'smooth'});
+      };  
+       
+      function scrollunder(){
+         var element = document.documentElement;
+         var bottom = element.scrollHeight - element.clientHeight;
+         window.scrollTo({top: bottom, left: 0, behavior: 'smooth'});
+      };   
+       
+       
+       
+      function OpenWindow(url) {
+         window.open(url,"blank","width=800,height=720,left=900,top=100");
+      } 
+       
+       
+       
+       
+   </script>
+    
+
+
+    
+</body>
+    
+    
+    
+    
+    
+</html>
